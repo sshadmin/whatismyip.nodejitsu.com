@@ -1,0 +1,66 @@
+.header {
+  padding-top: 20px;
+  text-align: center;
+}
+
+h1, h2, h3, strong {
+  color: black;
+}
+
+h1 small, h2 small, h3 small {
+  color: #ff6600;
+}
+
+h6 {
+  color: black;
+  font-size: 12pt;
+  font-weight: bold;
+  line-height: 1;
+  padding-bottom: 3px;
+}
+
+a:link, a:active {
+  color: orange;
+}
+
+a:visited {
+  color: brown;
+}
+
+#ip {
+  text-align: center;
+}
+
+#ip h1 {
+  font-size: 48pt;
+  padding: 10px; 10px;
+}
+
+footer {
+  text-align: right;
+}
+
+body {
+  background-color: #ffe680;
+}
+
+.well {
+  background-image: url("/img/hideous_bg.gif");
+  background-color:#ffeeaa;
+  border-radius: 0px;
+  border-width: 2px;
+  border-color: black;
+}
+
+p {
+  color: black;
+}
+
+code {
+  color: #00ff00;
+  background-color: black;
+}
+
+#textads {
+  background-color: white;
+}

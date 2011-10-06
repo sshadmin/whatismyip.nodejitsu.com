@@ -1,8 +1,92 @@
 <html>
-<head>
-  <title>whatismyip.nodejitsu.com</title>
-</head>
-<body>
-<h1><%= ip %></h1>
-</body>
+  <head>
+    <title>whatismyip.nodejitsu.com</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/whatismyip.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="header">
+          <h1>whatismyip.nodejitsu.com <small>The best ip address finder there is!</small></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3 well" id="uncyclopedia">
+          <h3>What's an ip address?</h3>
+          <p>The term intellectual property reflects the idea that the subject matter of IP is the product of the mind or the intellect. Unfortunately, because this is just crap in your head, it can never be equivalent to tangible property. To get around this, Microsoft came up with the brilliant idea of addressing memory space in order to patent ideas in people's heads. Also, a proven result that Bill Gates is a communist by assigning every one a number. In the realm of Children's Television, an IP address is a mailbox used by Iggle Piggle who spends most of his time adrift in a small boat beneath a blanket, in flagrant contradiction of safe navigational practice.
+          </p>
+          <p> . . . </p>
+          <p>
+            [<a href="http://uncyclopedia.wikia.com/wiki/IP_address">READ MORE</a>] on <a href="http://uncyclopedia.wikia.com/">Uncyclopedia</a> (this content licensed Creative Commons SA/NC/BA)
+          </p>
+        </div>
+        <div class="span8">
+          <div id="ip">
+            <h3>Your IP Address is:</h3>
+            <h1><%= ip %></h1>
+          </div>
+          <div class="well" id="api">
+            <h2>Not good enough for you?</h2>
+            <p>
+              Try these on for size:
+              <ul>
+                <li>
+                  <code>
+                    curl http://whatismyip.nodejitsu.com/index.json
+                  </code>
+                </li>
+                <li>
+                  <code>
+                    curl http://whatismyip.nodejitsu.com/index.txt
+                  </code>
+                </li>
+              </ul>
+              <strong>Coming soon: `accept` header support!</strong>
+            </p>
+          </div>
+          <div id="textads">
+            <div class="row">
+              <div class="span4">
+                <h6>DID SOMEBODY SAY GIRLS?!</h6>
+                <p>We market ourselves as a dating site, but I think we both know what's really up. <a href="http://github.com">Click here!</a></p>
+              </div>
+              <div class="span4">
+                <h6>I bet you're a Leo. You're a Leo aren't you?</h6>
+                <p>The most accurate horoscopes! <strong>GUARANTEED.</strong> <a href="http://thefuckingweather.com/">Click here</a> for a free evaluation!</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="span4">
+                <h6>LOSE WEIGHT LIKE A BOSS</h6>
+                <p>Too busy to shed those pounds? <a href="http://4chan.org">I don't think so.</a></p>
+              </div>
+              <div class="span4">
+                <h6>Looking For Your IP Address?</h6>
+                <p>The <em>best</em> site for IP Address evaluations is <a href="/">one click away</a>.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="span8">
+                <p style="text-align: center;"><strong>--=ADS BY ACME ADS=--</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="span3 well ads">
+          <img src="/img/SURF-LIKE-A-PRO.gif">
+        </div>
+      </div>
+      <div class="row">
+        <div class="span15">
+          <div style="text-align: center" class="well ads">
+            <a href="http://rannmann.com">
+              <img src="/img/rannadd.gif">
+            </a>
+          <div>
+        </div>
+      </div>
+      <footer><p>Made by Joshua Holbrook. Enjoy!</p></footer>
+    </div>
+  </body>
 </html>
