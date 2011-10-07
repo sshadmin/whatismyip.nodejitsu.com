@@ -13,16 +13,16 @@ var getIp = function (req) {
   };
 };
 
+var getAccept = function (req) {
+  //I found this regexp on stack overflow.
+  //It's no real parser but probably good enough.
+  return req.headers.accept.match(/([^()<>@,;:\\"\/[\]?={} \t]+)\/([^()<>@,;:\\"\/[\]?={} \t]+)/)[0];
+}
+
 http.createServer(function (req, res) {
 
   // I bet there's a reasonable way to guess what these should be based on name or mimetype or something. Probably node-static uses it.
   var routes = {
-    "/": {
-      template: "/templates/index.html",
-      head: {
-        "Content-Type": "text/html"
-      }
-    },
 
     "/index.html": {
       template: "/templates/index.html",
@@ -46,9 +46,22 @@ http.createServer(function (req, res) {
     }
   }
 
+// Serve template based on accept type
+if (req.url === "/") {
+  var accept = getAccept(req);
+  Object.keys(routes).some(function (route) {
+    if (routes[route].head["Content-Type"] === accept) {
+        req.url = route;
+        return true;
+    }
+    return false;
+  })
+}
+
   var handled = Object.keys(routes).some(function(route) {
     if (req.url === route) {
       var ip = getIp(req);
+
       fs.readFile(__dirname + routes[route].template, function (err, template) {
         if (err) {
           winston.error(JSON.stringify(err, true, 2));
