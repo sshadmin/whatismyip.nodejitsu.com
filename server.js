@@ -22,40 +22,47 @@ var getAccept = function (req) {
 http.createServer(function (req, res) {
 
   // I bet there's a reasonable way to guess what these should be based on name or mimetype or something. Probably node-static uses it.
-  var routes = {
+var routes = {
 
-    "/index.html": {
-      template: "/templates/index.html",
-      head: {
-        "Content-Type": "text/html"
-      }
-    },
+  "/index.html": {
+    template: "/templates/index.html",
+    head: {
+      "Content-Type": "text/html"
+    }
+  },
 
-    "/index.json": {
-      template: "/templates/index.json",
-      head: {
-        "Content-Type": "application/json"
-      }
-    },
+  "/index.json": {
+    template: "/templates/index.json",
+    head: {
+      "Content-Type": "application/json"
+    }
+  },
 
-    "/index.txt": {
-      template: "/templates/index.txt",
-      head: {
-        "Content-Type": "text/plain"
-      }
+  "/index.txt": {
+    template: "/templates/index.txt",
+    head: {
+      "Content-Type": "text/plain"
     }
   }
+}
 
 // Serve template based on accept type
 if (req.url === "/") {
   var accept = getAccept(req);
-  Object.keys(routes).some(function (route) {
-    if (routes[route].head["Content-Type"] === accept) {
-        req.url = route;
-        return true;
-    }
-    return false;
-  })
+
+  if (accept === "*/*") {
+    req.url = '/index.html';
+  }
+  else {
+
+    Object.keys(routes).some(function (route) {
+      if (routes[route].head["Content-Type"] === accept) {
+          req.url = route;
+          return true;
+      }
+      return false;
+    });
+  }
 }
 
   var handled = Object.keys(routes).some(function(route) {
