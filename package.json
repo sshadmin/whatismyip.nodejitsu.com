@@ -2,7 +2,7 @@
   "name": "whatismyip",
   "subdomain": "whatismyip",
   "scripts": {
-    "start": "server.js"
+    "start": "node ./server.js"
   },
   "version": "0.0.0-19",
   "dependencies": {
